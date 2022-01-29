@@ -1,0 +1,11 @@
+{
+    "name": "pmhaxe",
+    "url": "https://github.com/eminarican/pmhaxe",
+    "description": "Pocketmine externs",
+    "license": "GPL",
+    "version": "0.0.1",
+    "classPath": "src",
+    "releasenote": "",
+    "contributors": ["eminarican"],
+    "tags": ["pocketmine", "extern"]
+}

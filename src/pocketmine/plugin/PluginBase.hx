@@ -7,18 +7,18 @@ import php.Resource;
 @:native("pocketmine\\plugin\\PluginBase")
 extern abstract class PluginBase implements Plugin {
 
-    function onLoad(): Void;
+    @:protected function onLoad(): Void;
 
 	/**
 	 * Called when the plugin is enabled
 	 */
-	function onEnable(): Void;
+     @:protected function onEnable(): Void;
 
 	/**
 	 * Called when the plugin is disabled
 	 * Use this to free open things and finish actions
 	 */
-	function onDisable(): Void;
+     @:protected function onDisable(): Void;
 
 	final function isEnabled(): Bool;
 
@@ -73,7 +73,7 @@ extern abstract class PluginBase implements Plugin {
 
 	final function getFullName(): String;
 
-	function getFile(): String;
+	@:protected function getFile(): String;
 
 	//function getPluginLoader(): PluginLoader;
 

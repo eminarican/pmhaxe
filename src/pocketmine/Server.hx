@@ -1,7 +1,9 @@
 package pocketmine;
 
-import php.TypedArray;
+import pocketmine.utils.UuidInterface;
 import pocketmine.player.Player;
+
+import php.TypedArray;
 import php.Throwable;
 
 @:native("pocketmine\\Server")
@@ -53,7 +55,7 @@ extern class Server {
 
 	function getIpV6(): String;
 
-	//function getServerUniqueId(): UuidInterface;
+	function getServerUniqueId(): UuidInterface;
 
 	//function getGamemode(): GameMode;
 
@@ -150,7 +152,7 @@ extern class Server {
 	/**
 	 * Returns the player online with a UUID equivalent to the specified UuidInterface object, or null if not found
 	 */
-	//function getPlayerByUUID(uuid: UuidInterface): Null<Player>;
+	function getPlayerByUUID(uuid: UuidInterface): Null<Player>;
 
 	function getConfigGroup(): ServerConfigGroup;
 

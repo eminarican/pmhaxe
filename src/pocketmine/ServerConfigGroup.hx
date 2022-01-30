@@ -22,4 +22,6 @@ extern final class ServerConfigGroup {
 	function getConfigBool(variable: String, defaultValue: Bool = false): Bool;
 
 	function setConfigBool(variable: String, value: Bool): Void;
+
+    function save(): Void;
 }

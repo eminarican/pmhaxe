@@ -152,7 +152,7 @@ extern class Server {
 	 */
 	//function getPlayerByUUID(uuid: UuidInterface): Null<Player>;
 
-	//function getConfigGroup(): ServerConfigGroup;
+	function getConfigGroup(): ServerConfigGroup;
 
 	//function getPluginCommand(name: String): Null<EitherType<Command, PluginOwned>>;
 

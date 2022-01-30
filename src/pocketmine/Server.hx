@@ -1,5 +1,6 @@
 package pocketmine;
 
+import pocketmine.player.Player;
 import php.Throwable;
 
 @:native("pocketmine\\Server")
@@ -110,7 +111,7 @@ extern class Server {
 
 	//function getCommandMap(): SimpleCommandMap;
 
-	//function getOnlinePlayers(): Array<Player>;
+	function getOnlinePlayers(): Array<Player>;
 
 	function shouldSavePlayerData(): Bool;
 
@@ -133,17 +134,17 @@ extern class Server {
 	 *
 	 * @see Server::getPlayerExact()
 	 */
-	//function getPlayerByPrefix(name: String): Null<Player>;
+	function getPlayerByPrefix(name: String): Null<Player>;
 
 	/**
 	 * Returns an online player with the given name (case insensitive), or null if not found.
 	 */
-	//function getPlayerExact(name: String): Null<Player>;
+	function getPlayerExact(name: String): Null<Player>;
 
 	/**
 	 * Returns the player online with the specified raw UUID, or null if not found
 	 */
-	//function getPlayerByRawUUID(rawUUID: String): Null<Player>;
+	function getPlayerByRawUUID(rawUUID: String): Null<Player>;
 
 	/**
 	 * Returns the player online with a UUID equivalent to the specified UuidInterface object, or null if not found
@@ -201,9 +202,9 @@ extern class Server {
 
 	//function broadcastMessage(message: EitherType<Translatable, String>, recipients: Null<Array<CommandSender>> = null): Int;
 
-	//function broadcastTip(tip: String, recipients: Null<Array<Player>> = null): Int;
+	function broadcastTip(tip: String, recipients: Null<Array<Player>> = null): Int;
 
-	//function broadcastPopup(popup: String, recipients: Null<Array<Player>> = null): Int;
+	function broadcastPopup(popup: String, recipients: Null<Array<Player>> = null): Int;
 
 	/**
 	 * fadeIn Duration in ticks for fade-in. If -1 is given, client-sided defaults will be used.
@@ -244,9 +245,9 @@ extern class Server {
 
 	//function getTickSleeper(): SleeperHandler;
 
-	//function addOnlinePlayer(player: Player): Bool;
+	function addOnlinePlayer(player: Player): Bool;
 
-	//function removeOnlinePlayer(player: Player): Void;
+	function removeOnlinePlayer(player: Player): Void;
 
 	//function sendUsage(type: Int = SendUsageTask::TYPE_STATUS): Void;
 

@@ -1,7 +1,7 @@
 package pocketmine.player;
 
 @:native("pocketmine\\player\\Player")
-extern class Player {
+extern class Player implements IPlayer {
 
     //function getLeaveMessage(): EitherType<Translatable, String>;
 

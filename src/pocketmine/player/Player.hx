@@ -1,8 +1,5 @@
 package pocketmine.player;
 
-import php.Const;
-import haxe.extern.EitherType;
-
 @:native("pocketmine\\player\\Player")
 extern class Player {
 

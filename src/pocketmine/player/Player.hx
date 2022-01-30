@@ -179,12 +179,12 @@ extern class Player implements IPlayer {
 
 	function stopSleep(): Void;
 
-	//function getGamemode(): GameMode;
+	function getGamemode(): GameMode;
 
 	/**
 	 * Sets the gamemode, and if needed, kicks the Player.
 	 */
-	//function setGamemode(gm: GameMode): Bool;
+	function setGamemode(gm: GameMode): Bool;
 
 	/**
 	 * NOTE: Because Survival and Adventure Mode share some similar behaviour, this method will also return true if the player is

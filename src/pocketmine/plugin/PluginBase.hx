@@ -1,5 +1,6 @@
 package pocketmine.plugin;
 
+import php.TypedArray;
 import php.files.SplFileInfo;
 import php.Resource;
 
@@ -34,7 +35,7 @@ extern abstract class PluginBase implements Plugin {
 
 	final function getDataFolder(): String;
 
-	//final function getDescription(): PluginDescription;
+	final function getDescription(): PluginDescription;
 
 	//function getLogger(): AttachableLogger;
 
@@ -56,7 +57,7 @@ extern abstract class PluginBase implements Plugin {
 	/**
 	 * Returns all the resources packaged with the plugin in the form ["path/in/resources" => SplFileInfo]
 	 */
-	function getResources(): Array<SplFileInfo>;
+	function getResources(): TypedArray<String, SplFileInfo>;
 
 	//function getConfig(): Config;
 

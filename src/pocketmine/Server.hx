@@ -1,5 +1,6 @@
 package pocketmine;
 
+import php.TypedArray;
 import pocketmine.player.Player;
 import php.Throwable;
 
@@ -237,7 +238,7 @@ extern class Server {
 
 	//function getQueryInformation(): QueryInfo;
 
-	function exceptionHandler(e: Throwable, trace: Null<Array<Array<Any>>> = null): Void;
+	function exceptionHandler(e: Throwable, trace: Null<Array<TypedArray<String, Any>>> = null): Void;
 
 	function crashDump(): Void;
 

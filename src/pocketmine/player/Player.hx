@@ -1,5 +1,7 @@
 package pocketmine.player;
 
+import pocketmine.math.Vector3;
+
 @:native("pocketmine\\player\\Player")
 extern class Player implements IPlayer {
 
@@ -171,11 +173,11 @@ extern class Player implements IPlayer {
 	 * Sets the spawnpoInt of the player (and the compass direction) to a Vector3, or set it on another world with a
 	 * Position object
 	 */
-	//function setSpawn(pos: Null<Vector3>): Void;
+	function setSpawn(pos: Null<Vector3>): Void;
 
 	function isSleeping(): Bool;
 
-	//function sleepOn(pos: Vector3): Bool;
+	function sleepOn(pos: Vector3): Bool;
 
 	function stopSleep(): Void;
 
@@ -232,11 +234,11 @@ extern class Player implements IPlayer {
 	 *
 	 * @param Vector3 newPos Coordinates of the player's feet, centered horizontally at the base of their bounding box.
 	 */
-	//function handleMovement(newPos: Vector3): Void;
+	function handleMovement(newPos: Vector3): Void;
 
 	function jump(): Void;
 
-	//function setMotion(motion: Vector3): Bool;
+	function setMotion(motion: Vector3): Bool;
 
 	function onUpdate(currentTick: Int): Bool;
 
@@ -247,7 +249,8 @@ extern class Player implements IPlayer {
 	 *
 	 * @param Float   maxDiff defaults to half of the 3D diagonal width of a block
 	 */
-	//function canInteract(pos: Vector3, maxDistance: Float, maxDiff: Float = Const.M_SQRT3 / 2): Bool;
+    // Todo: find out fix, madDiff default = Const.M_SQRT3 / 2
+	function canInteract(pos: Vector3, maxDistance: Float, maxDiff: Float): Bool;
 
 	/**
 	 * Sends a chat message as this player. If the message begins with a / (forward-slash) it will be treated
@@ -278,32 +281,32 @@ extern class Player implements IPlayer {
 	 */
 	function releaseHeldItem(): Bool;
 
-	//function pickBlock(pos: Vector3, addTileNBT: Bool): Bool;
+	function pickBlock(pos: Vector3, addTileNBT: Bool): Bool;
 
 	/**
 	 * Performs a left-click (attack) action on the block.
 	 *
 	 * @return Bool if an action took place successfully
 	 */
-	//function attackBlock(pos: Vector3, face: Int): Bool;
+	function attackBlock(pos: Vector3, face: Int): Bool;
 
-	//function continueBreakBlock(pos: Vector3, face: Int): Void;
+	function continueBreakBlock(pos: Vector3, face: Int): Void;
 
-	//function stopBreakBlock(pos: Vector3): Void;
+	function stopBreakBlock(pos: Vector3): Void;
 
 	/**
 	 * Breaks the block at the given position using the currently-held item.
 	 *
 	 * @return Bool if the block was successfully broken, false if a rollback needs to take place.
 	 */
-	//function breakBlock(pos: Vector3): Bool;
+	function breakBlock(pos: Vector3): Bool;
 
 	/**
 	 * Touches the block at the given position with the currently-held item.
 	 *
 	 * @return Bool if it did something
 	 */
-	//function InteractBlock(pos: Vector3, face: Int, clickOffset: Vector3): Bool;
+	function InteractBlock(pos: Vector3, face: Int, clickOffset: Vector3): Bool;
 
 	/**
 	 * Attacks the given entity with the currently-held item.
@@ -456,7 +459,7 @@ extern class Player implements IPlayer {
 
 	//function broadcastSound(sound: Sound, targets: Null<Array<Player>> = null): Void;
 
-	//function teleport(pos: Vector3, yaw: Null<Float> = null, pitch: Null<Float> = null): Bool;
+	function teleport(pos: Vector3, yaw: Null<Float> = null, pitch: Null<Float> = null): Bool;
 
 	//function getCursorInventory(): PlayerCursorInventory;
 

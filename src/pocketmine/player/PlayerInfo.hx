@@ -1,5 +1,6 @@
 package pocketmine.player;
 
+import pocketmine.utils.UuidInterface;
 import php.TypedArray;
 
 @:native("pocketmine\\player\\PlayerInfo")
@@ -7,7 +8,7 @@ extern class PlayerInfo {
     
     public function getUsername(): String;
 
-	//public function getUuid(): UuidInterface;
+	public function getUuid(): UuidInterface;
 
 	//public function getSkin(): Skin;
 

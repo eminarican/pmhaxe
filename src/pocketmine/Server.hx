@@ -260,5 +260,5 @@ extern class Server {
 
 	//function getNetwork(): Network;
 
-	//function getMemoryManager(): MemoryManager;
+	function getMemoryManager(): MemoryManager;
 }

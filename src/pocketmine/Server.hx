@@ -1,136 +1,131 @@
 package pocketmine;
 
 import php.Throwable;
-import haxe.extern.EitherType;
 
-@:native("pocketmineServer")
+@:native("pocketmine\\Server")
 extern class Server {
     
-    public function getName(): String;
+    function getName(): String;
 
-	public function isRunning(): Bool;
+	function isRunning(): Bool;
 
-	public function getPocketMineVersion(): String;
+	function getPocketMineVersion(): String;
 
-	public function getVersion(): String;
+	function getVersion(): String;
 
-	public function getApiVersion(): String;
+	function getApiVersion(): String;
 
-	public function getFilePath(): String;
+	function getFilePath(): String;
 
-	public function getResourcePath(): String;
+	function getResourcePath(): String;
 
-	public function getDataPath(): String;
+	function getDataPath(): String;
 
-	public function getPluginPath(): String;
+	function getPluginPath(): String;
 
-	public function getMaxPlayers(): Int;
+	function getMaxPlayers(): Int;
 
 	/**
 	 * Returns whether the server requires that players be authenticated to Xbox Live. If true, connecting players who
 	 * are not logged Into Xbox Live will be disconnected.
 	 */
-	public function getOnlineMode(): Bool;
+	function getOnlineMode(): Bool;
 
 	/**
 	 * Alias of getOnlineMode().
 	 */
-	public function requiresAuthentication(): Bool;
+	function requiresAuthentication(): Bool;
 
-	public function getPort(): Int;
+	function getPort(): Int;
 
-	public function getPortV6(): Int;
+	function getPortV6(): Int;
 
-	public function getViewDistance(): Int;
+	function getViewDistance(): Int;
 
 	/**
 	 * Returns a view distance up to the currently-allowed limit.
 	 */
-	public function getAllowedViewDistance(distance: Int): Int;
+	function getAllowedViewDistance(distance: Int): Int;
 
-	public function getIp(): String;
+	function getIp(): String;
 
-	public function getIpV6(): String;
+	function getIpV6(): String;
 
-	//public function getServerUniqueId(): UuidInterface;
+	//function getServerUniqueId(): UuidInterface;
 
-	//public function getGamemode(): GameMode;
+	//function getGamemode(): GameMode;
 
-	public function getForceGamemode(): Bool;
+	function getForceGamemode(): Bool;
 
 	/**
 	 * Returns Server global difficulty. Note that this may be overridden in individual worlds.
 	 */
-	public function getDifficulty(): Int;
+	function getDifficulty(): Int;
 
-	public function hasWhitelist(): Bool;
+	function hasWhitelist(): Bool;
 
-	public function isHardcore(): Bool;
+	function isHardcore(): Bool;
 
-	public function getMotd(): String;
+	function getMotd(): String;
 
-	//public function getLoader(): DynamicClassLoader;
+	//function getLoader(): DynamicClassLoader;
 
-	//public function getLogger(): AttachableThreadedLogger;
+	//function getLogger(): AttachableThreadedLogger;
 
-	//public function getUpdater(): UpdateChecker;
+	//function getUpdater(): UpdateChecker;
 
-	//public function getPluginManager(): PluginManager;
+	//function getPluginManager(): PluginManager;
 
-	//public function getCraftingManager(): CraftingManager;
+	//function getCraftingManager(): CraftingManager;
 
-	//public function getResourcePackManager(): ResourcePackManager;
+	//function getResourcePackManager(): ResourcePackManager;
 
-	//public function getWorldManager(): WorldManager;
+	//function getWorldManager(): WorldManager;
 
-	//public function getAsyncPool(): AsyncPool;
+	//function getAsyncPool(): AsyncPool;
 
-	public function getTick(): Int;
+	function getTick(): Int;
 
 	/**
 	 * Returns the last server TPS measure
 	 */
-	public function getTicksPerSecond(): Float;
+	function getTicksPerSecond(): Float;
 
 	/**
 	 * Returns the last server TPS average measure
 	 */
-	public function getTicksPerSecondAverage(): Float;
+	function getTicksPerSecondAverage(): Float;
 
 	/**
 	 * Returns the TPS usage/load in %
 	 */
-	public function getTickUsage(): Float;
+	function getTickUsage(): Float;
 
 	/**
 	 * Returns the TPS usage/load average in %
 	 */
-	public function getTickUsageAverage(): Float;
+	function getTickUsageAverage(): Float;
 
-	public function getStartTime(): Float;
+	function getStartTime(): Float;
 
-	//public function getCommandMap(): SimpleCommandMap;
+	//function getCommandMap(): SimpleCommandMap;
 
-	//public function getOnlinePlayers(): Array<Player>;
+	//function getOnlinePlayers(): Array<Player>;
 
-	public function shouldSavePlayerData(): Bool;
+	function shouldSavePlayerData(): Bool;
 
-	//public function getOfflinePlayer(name: String): EitherType<OfflinePlayer, Player>;
-
-	private function getPlayerDataPath(username: String): String;
+	//function getOfflinePlayer(name: String): EitherType<OfflinePlayer, Player>;
 
 	/**
 	 * Returns whether the server has stored any saved data for this player.
 	 */
-	public function hasOfflinePlayerData(name: String): Bool;
+	function hasOfflinePlayerData(name: String): Bool;
 
-	private function handleCorruptedPlayerData(name: String): Void;
+	//function getOfflinePlayerData(name: String): Null<CompoundTag>;
 
-	//public function getOfflinePlayerData(name: String): Null<CompoundTag>;
+	//function saveOfflinePlayerData(name: String, nbtTag: CompoundTag): Void;
 
-	//public function saveOfflinePlayerData(name: String, nbtTag: CompoundTag): Void;
-
-	//public function createPlayer(session: NetworkSession, playerInfo: PlayerInfo, authenticated: Bool, offlinePlayerData: Null<CompoundTag>): Promise;
+	//function createPlayer(session: NetworkSession, playerInfo: PlayerInfo, authenticated: Bool, offlinePlayerData: Null<CompoundTag>): Promise;
 
 	/**
 	 * Returns an online player whose name begins with or equals the given String (case insensitive).
@@ -138,77 +133,77 @@ extern class Server {
 	 *
 	 * @see Server::getPlayerExact()
 	 */
-	//public function getPlayerByPrefix(name: String): Null<Player>;
+	//function getPlayerByPrefix(name: String): Null<Player>;
 
 	/**
 	 * Returns an online player with the given name (case insensitive), or null if not found.
 	 */
-	//public function getPlayerExact(name: String): Null<Player>;
+	//function getPlayerExact(name: String): Null<Player>;
 
 	/**
 	 * Returns the player online with the specified raw UUID, or null if not found
 	 */
-	//public function getPlayerByRawUUID(rawUUID: String): Null<Player>;
+	//function getPlayerByRawUUID(rawUUID: String): Null<Player>;
 
 	/**
 	 * Returns the player online with a UUID equivalent to the specified UuidInterface object, or null if not found
 	 */
-	//public function getPlayerByUUID(uuid: UuidInterface): Null<Player>;
+	//function getPlayerByUUID(uuid: UuidInterface): Null<Player>;
 
-	//public function getConfigGroup(): ServerConfigGroup;
+	//function getConfigGroup(): ServerConfigGroup;
 
-	//public function getPluginCommand(name: String): Null<EitherType<Command, PluginOwned>>;
+	//function getPluginCommand(name: String): Null<EitherType<Command, PluginOwned>>;
 
-	//public function getNameBans(): BanList;
+	//function getNameBans(): BanList;
 
-	//public function getIPBans(): BanList;
+	//function getIPBans(): BanList;
 
-	public function addOp(name: String): Void;
+	function addOp(name: String): Void;
 
-	public function removeOp(name: String): Void;
+	function removeOp(name: String): Void;
 
-	public function addWhitelist(name: String): Void;
+	function addWhitelist(name: String): Void;
 
-	public function removeWhitelist(name: String): Void;
+	function removeWhitelist(name: String): Void;
 
-	public function isWhitelisted(name: String): Bool;
+	function isWhitelisted(name: String): Bool;
 
-	public function isOp(name: String): Bool;
+	function isOp(name: String): Bool;
 
-	//public function getWhitelisted(): Config;
+	//function getWhitelisted(): Config;
 
-	//public function getOps(): Config;
+	//function getOps(): Config;
 
-	public function getCommandAliases(): Array<Array<String>>;
+	function getCommandAliases(): Array<Array<String>>;
 
-	public static function getInstance(): Server;
+	static function getInstance(): Server;
 
 	/**
 	 * Subscribes to a particular message broadcast channel.
 	 * The channel ID can be any arbitrary String.
 	 */
-	//public function subscribeToBroadcastChannel(channelId: String, subscriber: CommandSender): Void;
+	//function subscribeToBroadcastChannel(channelId: String, subscriber: CommandSender): Void;
 
 	/**
 	 * Unsubscribes from a particular message broadcast channel.
 	 */
-	//public function unsubscribeFromBroadcastChannel(channelId: String, subscriber: CommandSender): Void;
+	//function unsubscribeFromBroadcastChannel(channelId: String, subscriber: CommandSender): Void;
 
 	/**
 	 * Unsubscribes from all broadcast channels.
 	 */
-	//public function unsubscribeFromAllBroadcastChannels(subscriber: CommandSender): Void;
+	//function unsubscribeFromAllBroadcastChannels(subscriber: CommandSender): Void;
 
 	/**
 	 * Returns a list of all the CommandSenders subscribed to the given broadcast channel.
 	 */
-	//public function getBroadcastChannelSubscribers(channelId: String): Array<CommandSender>;
+	//function getBroadcastChannelSubscribers(channelId: String): Array<CommandSender>;
 
-	//public function broadcastMessage(message: EitherType<Translatable, String>, recipients: Null<Array<CommandSender>> = null): Int;
+	//function broadcastMessage(message: EitherType<Translatable, String>, recipients: Null<Array<CommandSender>> = null): Int;
 
-	//public function broadcastTip(tip: String, recipients: Null<Array<Player>> = null): Int;
+	//function broadcastTip(tip: String, recipients: Null<Array<Player>> = null): Int;
 
-	//public function broadcastPopup(popup: String, recipients: Null<Array<Player>> = null): Int;
+	//function broadcastPopup(popup: String, recipients: Null<Array<Player>> = null): Int;
 
 	/**
 	 * fadeIn Duration in ticks for fade-in. If -1 is given, client-sided defaults will be used.
@@ -216,50 +211,50 @@ extern class Server {
 	 * fadeOut Duration in ticks for fade-out.
 	 * recipients
 	 */
-	//public function broadcastTitle(title: String, subtitle: String = "", fadeIn: Int = -1, stay: Int = -1, fadeOut: Int = -1, recipients: Null<Array<Player>> = null): Int;
+	//function broadcastTitle(title: String, subtitle: String = "", fadeIn: Int = -1, stay: Int = -1, fadeOut: Int = -1, recipients: Null<Array<Player>> = null): Int;
 
-	//public function broadcastPackets(players: Array<Player>, packets: Array<ClientboundPacket>): Bool;
+	//function broadcastPackets(players: Array<Player>, packets: Array<ClientboundPacket>): Bool;
 
 	/**
 	 * Broadcasts a list of packets in a batch to a list of players
 	 */
-	//public function prepareBatch(stream: PacketBatch, compressor: Compressor, sync: Null<Bool> = null): CompressBatchPromise;
+	//function prepareBatch(stream: PacketBatch, compressor: Compressor, sync: Null<Bool> = null): CompressBatchPromise;
 
-	//public function enablePlugins(type: PluginEnableOrder): Void;
+	//function enablePlugins(type: PluginEnableOrder): Void;
 
 	/**
 	 * Executes a command from a CommandSender
 	 */
-	//public function dispatchCommand(sender: CommandSender, commandLine: String, Internal: Bool = false): Bool;
+	//function dispatchCommand(sender: CommandSender, commandLine: String, Internal: Bool = false): Bool;
 
 	/**
 	 * Shuts the server down correctly
 	 */
-	public function shutdown(): Void;
+	function shutdown(): Void;
 
-	public function forceShutdown(): Void;
+	function forceShutdown(): Void;
 
-	//public function getQueryInformation(): QueryInfo;
+	//function getQueryInformation(): QueryInfo;
 
-	public function exceptionHandler(e: Throwable, trace: Null<Array<Array<Any>>> = null): Void;
+	function exceptionHandler(e: Throwable, trace: Null<Array<Array<Any>>> = null): Void;
 
-	public function crashDump(): Void;
+	function crashDump(): Void;
 
-	public function __debugInfo(): Array<Any>;
+	function __debugInfo(): Array<Any>;
 
-	//public function getTickSleeper(): SleeperHandler;
+	//function getTickSleeper(): SleeperHandler;
 
-	//public function addOnlinePlayer(player: Player): Bool;
+	//function addOnlinePlayer(player: Player): Bool;
 
-	//public function removeOnlinePlayer(player: Player): Void;
+	//function removeOnlinePlayer(player: Player): Void;
 
-	//public function sendUsage(type: Int = SendUsageTask::TYPE_STATUS): Void;
+	//function sendUsage(type: Int = SendUsageTask::TYPE_STATUS): Void;
 
-	//public function getLanguage(): Language;
+	//function getLanguage(): Language;
 
-	public function isLanguageForced(): Bool;
+	function isLanguageForced(): Bool;
 
-	//public function getNetwork(): Network;
+	//function getNetwork(): Network;
 
-	//public function getMemoryManager(): MemoryManager;
+	//function getMemoryManager(): MemoryManager;
 }

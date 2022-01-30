@@ -15,6 +15,6 @@ extern interface Collectable {
 	 *
 	 * @return bool Whether the referenced object can be destroyed
 	 */
-    function isGarbage():Bool;
+    function isGarbage(): Bool;
 
 }

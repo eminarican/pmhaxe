@@ -11,5 +11,4 @@ package php.pthreads;
  * @since 3.0.0
  */
 @:native("Volatile")
-extern class Volatile extends Threaded{
-}
+extern class Volatile extends Threaded {}

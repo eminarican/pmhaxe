@@ -1,5 +1,6 @@
 package pocketmine;
 
+import pocketmine.log.AttachableThreadedLogger;
 import pocketmine.utils.UuidInterface;
 import pocketmine.player.Player;
 
@@ -74,7 +75,7 @@ extern class Server {
 
 	//function getLoader(): DynamicClassLoader;
 
-	//function getLogger(): AttachableThreadedLogger;
+	function getLogger(): AttachableThreadedLogger;
 
 	//function getUpdater(): UpdateChecker;
 

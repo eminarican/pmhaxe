@@ -1,5 +1,7 @@
 package pocketmine.plugin;
 
+import pocketmine.log.AttachableLogger;
+
 @:native("pocketmine\\plugin\\Plugin")
 extern interface Plugin {
     
@@ -24,7 +26,7 @@ extern interface Plugin {
 
 	function getName(): String;
 
-	//function getLogger(): AttachableLogger;
+	function getLogger(): AttachableLogger;
 
 	//function getPluginLoader(): PluginLoader;
 

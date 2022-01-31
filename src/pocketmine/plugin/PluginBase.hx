@@ -1,5 +1,6 @@
 package pocketmine.plugin;
 
+import pocketmine.log.AttachableLogger;
 import php.TypedArray;
 import php.files.SplFileInfo;
 import php.Resource;
@@ -37,7 +38,7 @@ extern abstract class PluginBase implements Plugin {
 
 	final function getDescription(): PluginDescription;
 
-	//function getLogger(): AttachableLogger;
+	function getLogger(): AttachableLogger;
 
 	//function getCommand(name: String): Null<EitherType<Command, PluginOwned>>;
 

@@ -1,11 +1,14 @@
 package pocketmine.player;
 
+import haxe.extern.EitherType;
+import haxe.extern.EitherType;
 import pocketmine.math.Vector3;
+import pocketmine.lang.Translatable;
 
 @:native("pocketmine\\player\\Player")
 extern class Player implements IPlayer {
 
-    //function getLeaveMessage(): EitherType<Translatable, String>;
+    function getLeaveMessage(): EitherType<Translatable, String>;
 
 	function isAuthenticated(): Bool;
 
@@ -375,9 +378,10 @@ extern class Player implements IPlayer {
 	/**
 	 * Sends a direct chat message to a player
 	 */
-	//function sendMessage(message: EitherType<Translatable, String>): Void;
+	function sendMessage(message: EitherType<Translatable, String>): Void;
 
-	//function sendTranslation(message: String, parameters: EitherType<Array<Translatable>, Array<String>> = []): Void;
+    // find out fix
+	function sendTranslation(message: String, parameters: EitherType<Array<Translatable>, Array<String>>): Void;
 
 	function sendJukeboxPopup(key: String, args: Array<String>): Void;
 
@@ -413,7 +417,7 @@ extern class Player implements IPlayer {
 	/**
 	 * Kicks a player from the server
 	 */
-	//function kick(reason: String = "", quitMessage: Null<EitherType<Translatable, String>> = null): Bool;
+	function kick(reason: String = "", quitMessage: Null<EitherType<Translatable, String>> = null): Bool;
 
 	/**
 	 * Removes the player from the server. This cannot be cancelled.
@@ -427,7 +431,7 @@ extern class Player implements IPlayer {
 	 * @param String                   reason Shown to the player, usually this will appear on their disconnect screen.
 	 *                                 quitMessage Message to broadcast to online players (null will use default)
 	 */
-	//function disconnect(reason: String, quitMessage: Null<EitherType<Translatable, String>> = null): Void;
+	function disconnect(reason: String, quitMessage: Null<EitherType<Translatable, String>> = null): Void;
 
 	/**
 	 * @Internal
@@ -436,7 +440,7 @@ extern class Player implements IPlayer {
 	 * @param String                           reason Shown to the player, usually this will appear on their disconnect screen.
 	 *                                         quitMessage Message to broadcast to online players (null will use default)
 	 */
-	//function onPostDisconnect(reason: String, quitMessage: Null<EitherType<Translatable, String>>): Void;
+	function onPostDisconnect(reason: String, quitMessage: Null<EitherType<Translatable, String>>): Void;
 
 	function __debugInfo(): Array<Any>;
 

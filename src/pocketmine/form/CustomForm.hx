@@ -58,11 +58,11 @@ class CustomForm extends BaseForm {
         }
     }
 
-	function getType():String {
+	function getType(): String {
 		return "custom_form";
 	}
 
-	function serializeFormData():TypedArray<String, Any> {
+	function serializeFormData(): TypedArray<String, Any> {
 		return [
             "content" => this.elements,
         ];

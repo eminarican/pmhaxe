@@ -1,5 +1,9 @@
 package pocketmine.event;
 
+import php.reflection.ReflectionClass;
+import pocketmine.plugin.Plugin;
+import haxe.extern.EitherType;
+
 @:native("pocketmine\\event\\HandlerListManager")
 extern class HandlerListManager {
 

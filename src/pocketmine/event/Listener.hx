@@ -1,6 +1,5 @@
 package pocketmine.event;
 
-@:native("pocketmine\\event\\Listener")
 /**
  * Classes implementing this interface can be registered to receive called Events.
  * @see PluginManager::registerEvents()
@@ -27,4 +26,5 @@ package pocketmine.event;
  * Event handlers will receive any instanceof the Event class they have chosen to receive. For example, an
  * EntityDamageEvent handler will also receive any subclass of EntityDamageEvent.
  */
-interface Listener {}
+@:native("pocketmine\\event\\Listener")
+extern interface Listener {}

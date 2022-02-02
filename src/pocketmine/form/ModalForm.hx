@@ -7,12 +7,13 @@ import pocketmine.player.Player;
  * This form type presents a simple "yes/no" dialog with two buttons.
  */
 class ModalForm extends BaseForm {
-	private var content:String;
 
-	private var button1:String;
-	private var button2:String;
+	private var content: String;
 
-	private var onSubmit:(Player, Bool) -> Void;
+	private var button1: String;
+	private var button2: String;
+
+	private var onSubmit: (Player, Bool) -> Void;
 
 	/**
 	 * @param String   title Text to put on the title of the dialog.
@@ -21,7 +22,7 @@ class ModalForm extends BaseForm {
 	 * @param String   yesButtonText Text to show on the "Yes" button. Defaults to client-translated "Yes" String.
 	 * @param String   noButtonText Text to show on the "No" button. Defaults to client-translated "No" String.
 	 */
-	public function new(title:String, text:String, onSubmit:(Player, Bool) -> Void, yesButtonText:String = "gui.yes", noButtonText:String = "gui.no") {
+	public function new(title: String, text: String, onSubmit: (Player, Bool) -> Void, yesButtonText: String = "gui.yes", noButtonText: String = "gui.no") {
 		super(title);
 		this.content = text;
 		this.onSubmit = onSubmit;
@@ -29,15 +30,15 @@ class ModalForm extends BaseForm {
 		this.button2 = noButtonText;
 	}
 
-	public function getYesButtonText():String {
+	public function getYesButtonText(): String {
 		return this.button1;
 	}
 
-	public function getNoButtonText():String {
+	public function getNoButtonText(): String {
 		return this.button2;
 	}
 
-	final public function handleResponse(player:Player, data:Null<Any>):Void {
+	final public function handleResponse(player: Player, data: Null<Any>): Void {
 		if (data == null) {
 			return;
 		} else if (Std.isOfType(data, Bool)) {
@@ -47,11 +48,11 @@ class ModalForm extends BaseForm {
 		}
 	}
 
-	function getType():String {
+	function getType(): String {
 		return "modal";
 	}
 
-	function serializeFormData():TypedArray<String, Any> {
+	function serializeFormData(): TypedArray<String, Any> {
 		return ["content" => this.content, "button1" => this.button1, "button2" => this.button2];
 	}
 }

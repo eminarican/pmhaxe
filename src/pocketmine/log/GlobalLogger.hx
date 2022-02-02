@@ -2,9 +2,10 @@ package pocketmine.log;
 
 @:native("GlobalLogger")
 extern final class GlobalLogger {
-	private function new():Void;
 
-	static function get():Logger;
+	private function new(): Void;
 
-	static function set(logger:Logger):Void;
+	static function get(): Logger;
+
+	static function set(logger: Logger): Void;
 }

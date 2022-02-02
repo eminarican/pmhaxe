@@ -2,6 +2,7 @@ package pocketmine.utils;
 
 @:native("Ramsey\\Uuid\\UuidInterface")
 extern interface UuidInterface {
+
 	/**
 	 * Returns -1, 0, or 1 if the UUID is less than, equal to, or greater than
 	 * the other UUID
@@ -17,7 +18,7 @@ extern interface UuidInterface {
 	 *
 	 * @return int -1, 0, or 1 if the UUID is less than, equal to, or greater than $other
 	 */
-	public function compareTo(other:UuidInterface):Int;
+	public function compareTo(other: UuidInterface): Int;
 
 	/**
 	 * Returns true if the UUID is equal to the provided object
@@ -30,14 +31,14 @@ extern interface UuidInterface {
 	 *
 	 * @return bool True if the other object is equal to this UUID
 	 */
-	public function equals(other:Null<Any>):Bool;
+	public function equals(other: Null<Any>): Bool;
 
 	/**
 	 * Returns the binary string representation of the UUID
 	 *
 	 * @psalm-return non-empty-string
 	 */
-	public function getBytes():String;
+	public function getBytes(): String;
 
 	/**
 	 * Returns the fields that comprise this UUID
@@ -57,12 +58,12 @@ extern interface UuidInterface {
 	 *
 	 * @psalm-return non-empty-string
 	 */
-	public function toString():String;
+	public function toString(): String;
 
 	/**
 	 * Casts the UUID to the string standard representation
 	 *
 	 * @psalm-return non-empty-string
 	 */
-	public function __toString():String;
+	public function __toString(): String;
 }

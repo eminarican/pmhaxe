@@ -6,6 +6,7 @@ import pocketmine.player.Player;
 
 @:native("pocketmine\\form\\Form")
 extern interface Form extends JsonSerializable<TypedArray<String, Any>> {
+
 	/**
 	 * Handles a form response from a player.
 	 *
@@ -13,5 +14,5 @@ extern interface Form extends JsonSerializable<TypedArray<String, Any>> {
 	 *
 	 * @throws FormValidationException if the data could not be processed
 	 */
-	public function handleResponse(player:Player, data:Null<Any>):Void;
+	public function handleResponse(player: Player, data: Null<Any>): Void;
 }

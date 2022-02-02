@@ -4,7 +4,8 @@ import pocketmine.log.AttachableLogger;
 
 @:native("pocketmine\\plugin\\Plugin")
 extern interface Plugin {
-	function isEnabled():Bool;
+
+	function isEnabled(): Bool;
 
 	/**
 	 * Called by the plugin manager when the plugin is enabled or disabled to inform the plugin of its enabled state.
@@ -13,18 +14,18 @@ extern interface Plugin {
 	 * @see PluginManager::enablePlugin()
 	 * @see PluginManager::disablePlugin()
 	 */
-	function onEnableStateChange(enabled:Bool):Void;
+	function onEnableStateChange(enabled: Bool): Void;
 
 	/**
 	 * Gets the plugin's data folder to save files and configuration.
 	 * This directory name has a trailing slash.
 	 */
-	function getDataFolder():String;
+	function getDataFolder(): String;
 
 	// function getDescription(): PluginDescription;
-	function getName():String;
+	function getName(): String;
 
-	function getLogger():AttachableLogger;
+	function getLogger(): AttachableLogger;
 	// function getPluginLoader(): PluginLoader;
 	// function getScheduler(): TaskScheduler;
 }

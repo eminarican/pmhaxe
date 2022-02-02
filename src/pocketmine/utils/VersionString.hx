@@ -2,27 +2,28 @@ package pocketmine.utils;
 
 @:native("pocketmine\\utils\\VersionString")
 extern class VersionString {
-	static function isValidBaseVersion(baseVersion:String):Bool;
 
-	function getNumber():Int;
+	static function isValidBaseVersion(baseVersion: String): Bool;
 
-	function getBaseVersion():String;
+	function getNumber(): Int;
 
-	function getFullVersion(build:Bool = false):String;
+	function getBaseVersion(): String;
 
-	function getMajor():Int;
+	function getFullVersion(build: Bool = false): String;
 
-	function getMinor():Int;
+	function getMajor(): Int;
 
-	function getPatch():Int;
+	function getMinor(): Int;
 
-	function getSuffix():String;
+	function getPatch(): Int;
 
-	function getBuild():Int;
+	function getSuffix(): String;
 
-	function isDev():Bool;
+	function getBuild(): Int;
 
-	function __toString():String;
+	function isDev(): Bool;
 
-	function compare(target:VersionString, diff:Bool = false):Int;
+	function __toString(): String;
+
+	function compare(target: VersionString, diff: Bool = false): Int;
 }

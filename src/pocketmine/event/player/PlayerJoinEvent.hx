@@ -13,9 +13,10 @@ import pocketmine.lang.Translatable;
  */
 @:native("pocketmine\\event\\player\\PlayerJoinEvent")
 extern class PlayerJoinEvent extends PlayerEvent {
-	public function new(player:Player, joinMessage:EitherType<Translatable, String>):Void;
 
-	public function setJoinMessage(joinMessage:EitherType<Translatable, String>):Void;
+	public function new(player: Player, joinMessage: EitherType<Translatable, String>): Void;
 
-	public function getJoinMessage():EitherType<Translatable, String>;
+	public function setJoinMessage(joinMessage: EitherType<Translatable, String>): Void;
+
+	public function getJoinMessage(): EitherType<Translatable, String>;
 }

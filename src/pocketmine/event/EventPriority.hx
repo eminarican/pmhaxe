@@ -10,9 +10,10 @@ package pocketmine.event;
  */
 @:native("pocketmine\\event\\EventPriority")
 extern final class EventPriority {
+
 	private function new();
 
-	inline static function ALL():Array<Int> {
+	inline static function ALL(): Array<Int> {
 		return [LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR];
 	}
 
@@ -54,5 +55,5 @@ extern final class EventPriority {
 	/**
 	 * @throws InvalidArgumentException
 	 */
-	public static function fromString(name:String):Int;
+	public static function fromString(name: String): Int;
 }

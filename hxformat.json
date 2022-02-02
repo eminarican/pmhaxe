@@ -1,0 +1,26 @@
+{
+    "emptyLines": {
+        "afterBlocks": "keep",
+        "afterLeftCurly": "keep",
+        "finalNewline": true,
+        "classEmptyLines": {
+            "beginType": 1
+        },
+        "abstractEmptyLines": {
+            "beginType": 1
+        },
+        "interfaceEmptyLines": {
+            "beginType": 1
+        },
+        "externClassEmptyLines": {
+            "beginType": 1
+        },
+    },
+    "whitespace": {
+        "arrowFunctionsPolicy": "around",
+        "typeHintColonPolicy": "after"
+    },
+    "wrapping": {
+        "maxLineLength": 300
+    }
+}

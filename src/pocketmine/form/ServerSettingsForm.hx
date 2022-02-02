@@ -12,23 +12,23 @@ import php.TypedArray;
  * settings.
  */
 class ServerSettingsForm extends CustomForm {
-	private final icon:Null<FormIcon>;
 
-	public function new(title:String, elements:Array<CustomFormElement>, icon:Null<FormIcon>, onSubmit:(Player, CustomFormResponse) -> Void,
-			onClose:Null<(Player) -> Void> = null) {
+	private final icon: Null<FormIcon>;
+
+	public function new(title: String, elements: Array<CustomFormElement>, icon: Null<FormIcon>, onSubmit: (Player, CustomFormResponse) -> Void, onClose: Null<(Player) -> Void> = null) {
 		super(title, elements, onSubmit, onClose);
 		this.icon = icon;
 	}
 
-	public function hasIcon():Bool {
+	public function hasIcon(): Bool {
 		return this.icon != null;
 	}
 
-	public function getIcon():Null<FormIcon> {
+	public function getIcon(): Null<FormIcon> {
 		return this.icon;
 	}
 
-	override function serializeFormData():TypedArray<String, Any> {
+	override function serializeFormData(): TypedArray<String, Any> {
 		var data = super.serializeFormData();
 
 		if (this.hasIcon()) {

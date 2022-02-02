@@ -8,70 +8,71 @@ import php.Throwable;
 
 @:native("pocketmine\\Server")
 extern class Server {
-	function getName():String;
 
-	function isRunning():Bool;
+	function getName(): String;
 
-	function getPocketMineVersion():String;
+	function isRunning(): Bool;
 
-	function getVersion():String;
+	function getPocketMineVersion(): String;
 
-	function getApiVersion():String;
+	function getVersion(): String;
 
-	function getFilePath():String;
+	function getApiVersion(): String;
 
-	function getResourcePath():String;
+	function getFilePath(): String;
 
-	function getDataPath():String;
+	function getResourcePath(): String;
 
-	function getPluginPath():String;
+	function getDataPath(): String;
 
-	function getMaxPlayers():Int;
+	function getPluginPath(): String;
+
+	function getMaxPlayers(): Int;
 
 	/**
 	 * Returns whether the server requires that players be authenticated to Xbox Live. If true, connecting players who
 	 * are not logged Into Xbox Live will be disconnected.
 	 */
-	function getOnlineMode():Bool;
+	function getOnlineMode(): Bool;
 
 	/**
 	 * Alias of getOnlineMode().
 	 */
-	function requiresAuthentication():Bool;
+	function requiresAuthentication(): Bool;
 
-	function getPort():Int;
+	function getPort(): Int;
 
-	function getPortV6():Int;
+	function getPortV6(): Int;
 
-	function getViewDistance():Int;
+	function getViewDistance(): Int;
 
 	/**
 	 * Returns a view distance up to the currently-allowed limit.
 	 */
-	function getAllowedViewDistance(distance:Int):Int;
+	function getAllowedViewDistance(distance: Int): Int;
 
-	function getIp():String;
+	function getIp(): String;
 
-	function getIpV6():String;
+	function getIpV6(): String;
 
-	function getServerUniqueId():UuidInterface;
+	function getServerUniqueId(): UuidInterface;
 
 	// function getGamemode(): GameMode;
-	function getForceGamemode():Bool;
+	function getForceGamemode(): Bool;
 
 	/**
 	 * Returns Server global difficulty. Note that this may be overridden in individual worlds.
 	 */
-	function getDifficulty():Int;
+	function getDifficulty(): Int;
 
-	function hasWhitelist():Bool;
+	function hasWhitelist(): Bool;
 
-	function isHardcore():Bool;
+	function isHardcore(): Bool;
 
-	function getMotd():String;
+	function getMotd(): String;
 
 	// function getLoader(): DynamicClassLoader;
-	function getLogger():AttachableThreadedLogger;
+	function getLogger(): AttachableThreadedLogger;
 
 	// function getUpdater(): UpdateChecker;
 	// function getPluginManager(): PluginManager;
@@ -79,41 +80,41 @@ extern class Server {
 	// function getResourcePackManager(): ResourcePackManager;
 	// function getWorldManager(): WorldManager;
 	// function getAsyncPool(): AsyncPool;
-	function getTick():Int;
+	function getTick(): Int;
 
 	/**
 	 * Returns the last server TPS measure
 	 */
-	function getTicksPerSecond():Float;
+	function getTicksPerSecond(): Float;
 
 	/**
 	 * Returns the last server TPS average measure
 	 */
-	function getTicksPerSecondAverage():Float;
+	function getTicksPerSecondAverage(): Float;
 
 	/**
 	 * Returns the TPS usage/load in %
 	 */
-	function getTickUsage():Float;
+	function getTickUsage(): Float;
 
 	/**
 	 * Returns the TPS usage/load average in %
 	 */
-	function getTickUsageAverage():Float;
+	function getTickUsageAverage(): Float;
 
-	function getStartTime():Float;
+	function getStartTime(): Float;
 
 	// function getCommandMap(): SimpleCommandMap;
-	function getOnlinePlayers():Array<Player>;
+	function getOnlinePlayers(): Array<Player>;
 
-	function shouldSavePlayerData():Bool;
+	function shouldSavePlayerData(): Bool;
 
 	// function getOfflinePlayer(name: String): EitherType<OfflinePlayer, Player>;
 
 	/**
 	 * Returns whether the server has stored any saved data for this player.
 	 */
-	function hasOfflinePlayerData(name:String):Bool;
+	function hasOfflinePlayerData(name: String): Bool;
 
 	// function getOfflinePlayerData(name: String): Null<CompoundTag>;
 	// function saveOfflinePlayerData(name: String, nbtTag: CompoundTag): Void;
@@ -125,45 +126,45 @@ extern class Server {
 	 *
 	 * @see Server::getPlayerExact()
 	 */
-	function getPlayerByPrefix(name:String):Null<Player>;
+	function getPlayerByPrefix(name: String): Null<Player>;
 
 	/**
 	 * Returns an online player with the given name (case insensitive), or null if not found.
 	 */
-	function getPlayerExact(name:String):Null<Player>;
+	function getPlayerExact(name: String): Null<Player>;
 
 	/**
 	 * Returns the player online with the specified raw UUID, or null if not found
 	 */
-	function getPlayerByRawUUID(rawUUID:String):Null<Player>;
+	function getPlayerByRawUUID(rawUUID: String): Null<Player>;
 
 	/**
 	 * Returns the player online with a UUID equivalent to the specified UuidInterface object, or null if not found
 	 */
-	function getPlayerByUUID(uuid:UuidInterface):Null<Player>;
+	function getPlayerByUUID(uuid: UuidInterface): Null<Player>;
 
-	function getConfigGroup():ServerConfigGroup;
+	function getConfigGroup(): ServerConfigGroup;
 
 	// function getPluginCommand(name: String): Null<EitherType<Command, PluginOwned>>;
 	// function getNameBans(): BanList;
 	// function getIPBans(): BanList;
-	function addOp(name:String):Void;
+	function addOp(name: String): Void;
 
-	function removeOp(name:String):Void;
+	function removeOp(name: String): Void;
 
-	function addWhitelist(name:String):Void;
+	function addWhitelist(name: String): Void;
 
-	function removeWhitelist(name:String):Void;
+	function removeWhitelist(name: String): Void;
 
-	function isWhitelisted(name:String):Bool;
+	function isWhitelisted(name: String): Bool;
 
-	function isOp(name:String):Bool;
+	function isOp(name: String): Bool;
 
 	// function getWhitelisted(): Config;
 	// function getOps(): Config;
-	function getCommandAliases():Array<Array<String>>;
+	function getCommandAliases(): Array<Array<String>>;
 
-	static function getInstance():Server;
+	static function getInstance(): Server;
 
 	/**
 	 * Subscribes to a particular message broadcast channel.
@@ -184,9 +185,9 @@ extern class Server {
 	 */
 	// function getBroadcastChannelSubscribers(channelId: String): Array<CommandSender>;
 	// function broadcastMessage(message: EitherType<Translatable, String>, recipients: Null<Array<CommandSender>> = null): Int;
-	function broadcastTip(tip:String, recipients:Null<Array<Player>> = null):Int;
+	function broadcastTip(tip: String, recipients: Null<Array<Player>> = null): Int;
 
-	function broadcastPopup(popup:String, recipients:Null<Array<Player>> = null):Int;
+	function broadcastPopup(popup: String, recipients: Null<Array<Player>> = null): Int;
 
 	/**
 	 * fadeIn Duration in ticks for fade-in. If -1 is given, client-sided defaults will be used.
@@ -209,26 +210,26 @@ extern class Server {
 	/**
 	 * Shuts the server down correctly
 	 */
-	function shutdown():Void;
+	function shutdown(): Void;
 
-	function forceShutdown():Void;
+	function forceShutdown(): Void;
 
 	// function getQueryInformation(): QueryInfo;
-	function exceptionHandler(e:Throwable, trace:Null<Array<TypedArray<String, Any>>> = null):Void;
+	function exceptionHandler(e: Throwable, trace: Null<Array<TypedArray<String, Any>>> = null): Void;
 
-	function crashDump():Void;
+	function crashDump(): Void;
 
-	function __debugInfo():Array<Any>;
+	function __debugInfo(): Array<Any>;
 
 	// function getTickSleeper(): SleeperHandler;
-	function addOnlinePlayer(player:Player):Bool;
+	function addOnlinePlayer(player: Player): Bool;
 
-	function removeOnlinePlayer(player:Player):Void;
+	function removeOnlinePlayer(player: Player): Void;
 
 	// function sendUsage(type: Int = SendUsageTask::TYPE_STATUS): Void;
 	// function getLanguage(): Language;
-	function isLanguageForced():Bool;
+	function isLanguageForced(): Bool;
 
 	// function getNetwork(): Network;
-	function getMemoryManager():MemoryManager;
+	function getMemoryManager(): MemoryManager;
 }

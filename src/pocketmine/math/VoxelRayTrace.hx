@@ -5,11 +5,12 @@ import haxe.extern.EitherType;
 
 @:native("pocketmine\\math\\VoxelRayTrace")
 extern final class VoxelRayTrace {
+
 	/**
 	 * Performs a ray trace from the start position in the given direction, for a distance of maxDistance. This
 	 * returns a Generator which yields Vector3s containing the coordinates of voxels it passes through.
 	 */
-	public static function inDirection(start:Vector3, directionVector:Vector3, maxDistance:Float):EitherType<Generator, Array<Vector3>>;
+	public static function inDirection(start: Vector3, directionVector: Vector3, maxDistance: Float): EitherType<Generator, Array<Vector3>>;
 
 	/**
 	 * Performs a ray trace between the start and end coordinates. This returns a Generator which yields Vector3s
@@ -18,7 +19,7 @@ extern final class VoxelRayTrace {
 	 * This is an implementation of the algorithm described in the link below.
 	 * @link http://www.cse.yorku.ca/~amana/research/grid.pdf
 	 */
-	public static function betweenPoints(start:Vector3, end:Vector3):EitherType<Generator, Array<Vector3>>;
+	public static function betweenPoints(start: Vector3, end: Vector3): EitherType<Generator, Array<Vector3>>;
 
 	/**
 	 * Returns the distance that must be travelled on an axis from the start point with the direction vector component to
@@ -34,5 +35,6 @@ extern final class VoxelRayTrace {
 	 *
 	 * @return Float Distance along the ray trace that must be travelled to cross a boundary.
 	 */
-	private static function rayTraceDistanceToBoundary(s:Float, ds:Float):Float;
+	private static function rayTraceDistanceToBoundary(s: Float, ds: Float): Float;
+
 }

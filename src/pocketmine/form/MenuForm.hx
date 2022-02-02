@@ -8,13 +8,14 @@ import pocketmine.player.Player;
  * form by clicking the X in the top left corner.
  */
 class MenuForm extends BaseForm {
-	private var content:String;
-	private var options:Array<MenuOption>;
 
-	private var onSubmit:(Player, Int) -> Void;
-	private var onClose:Null<(Player) -> Void>;
+	private var content: String;
+	private var options: Array<MenuOption>;
 
-	public function new(title:String, text:String, options:Array<MenuOption>, onSubmit:(Player, Int) -> Void, onClose:Null<(Player) -> Void> = null):Void {
+	private var onSubmit: (Player, Int) -> Void;
+	private var onClose: Null<(Player) -> Void>;
+
+	public function new(title: String, text: String, options: Array<MenuOption>, onSubmit: (Player, Int) -> Void, onClose: Null<(Player) -> Void> = null): Void {
 		super(title);
 		this.content = text;
 		this.options = options;
@@ -22,17 +23,17 @@ class MenuForm extends BaseForm {
 		this.onSubmit = onSubmit;
 	}
 
-	public function getOption(position:Int):Null<MenuOption> {
+	public function getOption(position: Int): Null<MenuOption> {
 		return this.options[position];
 	}
 
-	final public function handleResponse(player:Player, data:Null<Any>):Void {
+	final public function handleResponse(player: Player, data: Null<Any>): Void {
 		if (data == null) {
 			if (this.onClose != null) {
 				this.onClose(player);
 			}
 		} else if (Std.isOfType(data, Int)) {
-			var data:Int = data;
+			var data: Int = data;
 			if (this.options[data] == null) {
 				throw new FormValidationException("Option data does not exist");
 			}
@@ -42,12 +43,12 @@ class MenuForm extends BaseForm {
 		}
 	}
 
-	function getType():String {
+	function getType(): String {
 		return "form";
 	}
 
-	function serializeFormData():TypedArray<String, Any> {
-		var data:TypedArray<String, Any> = new TypedArray();
+	function serializeFormData(): TypedArray<String, Any> {
+		var data: TypedArray<String, Any> = new TypedArray();
 		data.set("buttons", this.options);
 		data.set("content", this.content);
 		return data;

@@ -10,10 +10,11 @@ package pocketmine.event;
  */
 @:native("pocketmine\\event\\Cancellable")
 extern interface Cancellable {
+
 	/**
 	 * Returns whether this instance of the event is currently cancelled.
 	 *
 	 * If it is cancelled, only downstream handlers that declare `@handleCancelled` will be called with this event.
 	 */
-	public function isCancelled():Bool;
+	public function isCancelled(): Bool;
 }

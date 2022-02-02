@@ -2,6 +2,7 @@ package pocketmine.utils;
 
 @:native("pocketmine\\utils\\Limits")
 extern final class Limits {
+
 	inline static final UINT8_MAX = 0xff;
 	inline static final INT8_MIN = -0x7f - 1;
 	inline static final INT8_MAX = 0x7f;

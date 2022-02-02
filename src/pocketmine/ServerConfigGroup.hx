@@ -2,25 +2,26 @@ package pocketmine;
 
 @:native("pocketmine\\ServerConfigGroup")
 extern final class ServerConfigGroup {
-	function getProperty(variable:String, defaultValue:Any = null):Any;
 
-	function getPropertyBool(variable:String, defaultValue:Bool):Bool;
+	function getProperty(variable: String, defaultValue: Any = null): Any;
 
-	function getPropertyInt(variable:String, defaultValue:Int):Int;
+	function getPropertyBool(variable: String, defaultValue: Bool): Bool;
 
-	function getPropertyString(variable:String, defaultValue:String):String;
+	function getPropertyInt(variable: String, defaultValue: Int): Int;
 
-	function getConfigString(variable:String, defaultValue:String = ""):String;
+	function getPropertyString(variable: String, defaultValue: String): String;
 
-	function setConfigString(variable:String, value:String):Void;
+	function getConfigString(variable: String, defaultValue: String = ""): String;
 
-	function getConfigInt(variable:String, defaultValue:Int = 0):Int;
+	function setConfigString(variable: String, value: String): Void;
 
-	function setConfigInt(variable:String, value:Int):Void;
+	function getConfigInt(variable: String, defaultValue: Int = 0): Int;
 
-	function getConfigBool(variable:String, defaultValue:Bool = false):Bool;
+	function setConfigInt(variable: String, value: Int): Void;
 
-	function setConfigBool(variable:String, value:Bool):Void;
+	function getConfigBool(variable: String, defaultValue: Bool = false): Bool;
 
-	function save():Void;
+	function setConfigBool(variable: String, value: Bool): Void;
+
+	function save(): Void;
 }

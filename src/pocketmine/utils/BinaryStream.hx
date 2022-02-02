@@ -2,199 +2,200 @@ package pocketmine.utils;
 
 @:native("pocketmine\\utils\\BinaryStream")
 extern class BinaryStream {
-	function new(buffer:String = "", offset:Int = 0);
+
+	function new(buffer: String = "", offset: Int = 0);
 
 	/**
 	 * Rewinds the stream poInter to the start.
 	 */
-	function rewind():Void;
+	function rewind(): Void;
 
-	function setOffset(offset:Int):Void;
+	function setOffset(offset: Int): Void;
 
-	function getOffset():Int;
+	function getOffset(): Int;
 
-	function getBuffer():String;
+	function getBuffer(): String;
 
 	/**
 	 * @throws BinaryDataException if there are not enough bytes left in the buffer
 	 */
-	function get(len:Int):String;
+	function get(len: Int): String;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getRemaining():String;
+	function getRemaining(): String;
 
-	function put(str:String):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getBool():Bool;
-
-	function putBool(v:Bool):Void;
+	function put(str: String): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getByte():Int;
+	function getBool(): Bool;
 
-	function putByte(v:Int):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getShort():Int;
+	function putBool(v: Bool): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getSignedShort():Int;
+	function getByte(): Int;
 
-	function putShort(v:Int):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getLShort():Int;
+	function putByte(v: Int): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getSignedLShort():Int;
-
-	function putLShort(v:Int):Void;
+	function getShort(): Int;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getTriad():Int;
+	function getSignedShort(): Int;
 
-	function putTriad(v:Int):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getLTriad():Int;
-
-	function putLTriad(v:Int):Void;
+	function putShort(v: Int): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getInt():Int;
-
-	function putInt(v:Int):Void;
+	function getLShort(): Int;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getLInt():Int;
+	function getSignedLShort(): Int;
 
-	function putLInt(v:Int):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getFloat():Float;
+	function putLShort(v: Int): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getRoundedFloat(accuracy:Int):Float;
+	function getTriad(): Int;
 
-	function putFloat(v:Float):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getLFloat():Float;
+	function putTriad(v: Int): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getRoundedLFloat(accuracy:Int):Float;
+	function getLTriad(): Int;
 
-	function putLFloat(v:Float):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getDouble():Float;
-
-	function putDouble(v:Float):Void;
+	function putLTriad(v: Int): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getLDouble():Float;
+	function getInt(): Int;
 
-	function putLDouble(v:Float):Void;
-
-	/**
-	 * @throws BinaryDataException
-	 */
-	function getLong():Int;
-
-	function putLong(v:Int):Void;
+	function putInt(v: Int): Void;
 
 	/**
 	 * @throws BinaryDataException
 	 */
-	function getLLong():Int;
+	function getLInt(): Int;
 
-	function putLLong(v:Int):Void;
+	function putLInt(v: Int): Void;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getFloat(): Float;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getRoundedFloat(accuracy: Int): Float;
+
+	function putFloat(v: Float): Void;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getLFloat(): Float;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getRoundedLFloat(accuracy: Int): Float;
+
+	function putLFloat(v: Float): Void;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getDouble(): Float;
+
+	function putDouble(v: Float): Void;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getLDouble(): Float;
+
+	function putLDouble(v: Float): Void;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getLong(): Int;
+
+	function putLong(v: Int): Void;
+
+	/**
+	 * @throws BinaryDataException
+	 */
+	function getLLong(): Int;
+
+	function putLLong(v: Int): Void;
 
 	/**
 	 * Reads a 32-bit variable-length unsigned Integer from the buffer and returns it.
 	 *
 	 * @throws BinaryDataException
 	 */
-	function getUnsignedVarInt():Int;
+	function getUnsignedVarInt(): Int;
 
 	/**
 	 * Writes a 32-bit variable-length unsigned Integer to the end of the buffer.
 	 */
-	function putUnsignedVarInt(v:Int):Void;
+	function putUnsignedVarInt(v: Int): Void;
 
 	/**
 	 * Reads a 32-bit zigzag-encoded variable-length Integer from the buffer and returns it.
 	 *
 	 * @throws BinaryDataException
 	 */
-	function getVarInt():Int;
+	function getVarInt(): Int;
 
 	/**
 	 * Writes a 32-bit zigzag-encoded variable-length Integer to the end of the buffer.
 	 */
-	function putVarInt(v:Int):Void;
+	function putVarInt(v: Int): Void;
 
 	/**
 	 * Reads a 64-bit variable-length Integer from the buffer and returns it.
 	 *
 	 * @throws BinaryDataException
 	 */
-	function getUnsignedVarLong():Int;
+	function getUnsignedVarLong(): Int;
 
 	/**
 	 * Writes a 64-bit variable-length Integer to the end of the buffer.
 	 */
-	function putUnsignedVarLong(v:Int):Void;
+	function putUnsignedVarLong(v: Int): Void;
 
 	/**
 	 * Reads a 64-bit zigzag-encoded variable-length Integer from the buffer and returns it.
 	 *
 	 * @throws BinaryDataException
 	 */
-	function getVarLong():Int;
+	function getVarLong(): Int;
 
 	/**
 	 * Writes a 64-bit zigzag-encoded variable-length Integer to the end of the buffer.
 	 */
-	function putVarLong(v:Int):Void;
+	function putVarLong(v: Int): Void;
 
 	/**
 	 * Returns whether the offset has reached the end of the buffer.
 	 */
-	function feof():Bool;
+	function feof(): Bool;
 }

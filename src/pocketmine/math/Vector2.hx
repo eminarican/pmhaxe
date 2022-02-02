@@ -2,47 +2,48 @@ package pocketmine.math;
 
 @:native("pocketmine\\math\\Vector2")
 extern class Vector2 {
-	function new(x:Float, y:Float):Void;
 
-	function getX():Float;
+	function new(x: Float, y: Float): Void;
 
-	function getY():Float;
+	function getX(): Float;
 
-	function getFloorX():Int;
+	function getY(): Float;
 
-	function getFloorY():Int;
+	function getFloorX(): Int;
 
-	function add(x:Float, y:Float):Vector2;
+	function getFloorY(): Int;
 
-	function addVector(vector2:Vector2):Vector2;
+	function add(x: Float, y: Float): Vector2;
 
-	function subtract(x:Float, y:Float):Vector2;
+	function addVector(vector2: Vector2): Vector2;
 
-	function subtractVector(vector2:Vector2):Vector2;
+	function subtract(x: Float, y: Float): Vector2;
 
-	function ceil():Vector2;
+	function subtractVector(vector2: Vector2): Vector2;
 
-	function floor():Vector2;
+	function ceil(): Vector2;
 
-	function round():Vector2;
+	function floor(): Vector2;
 
-	function abs():Vector2;
+	function round(): Vector2;
 
-	function multiply(number:Float):Vector2;
+	function abs(): Vector2;
 
-	function divide(number:Float):Vector2;
+	function multiply(number: Float): Vector2;
 
-	function distance(pos:Vector2):Float;
+	function divide(number: Float): Vector2;
 
-	function distanceSquared(pos:Vector2):Float;
+	function distance(pos: Vector2): Float;
 
-	function length():Float;
+	function distanceSquared(pos: Vector2): Float;
 
-	function lengthSquared():Float;
+	function length(): Float;
 
-	function normalize():Vector2;
+	function lengthSquared(): Float;
 
-	function dot(v:Vector2):Float;
+	function normalize(): Vector2;
 
-	function __toString():String;
+	function dot(v: Vector2): Float;
+
+	function __toString(): String;
 }

@@ -6,22 +6,23 @@ import haxe.extern.EitherType;
 
 @:native("pocketmine\\event\\HandlerListManager")
 extern class HandlerListManager {
-	static function global():HandlerListManager;
+
+	static function global(): HandlerListManager;
 
 	/**
 	 * Unregisters all the listeners
 	 * If a Plugin or Listener is passed, all the listeners with that object will be removed
 	 */
-	public function unregisterAll(object:Null<EitherType<Plugin, EitherType<Listener, RegisteredListener>>> = null):Void;
+	public function unregisterAll(object: Null<EitherType<Plugin, EitherType<Listener, RegisteredListener>>> = null): Void;
 
-	private static function isValidClass(clazz:ReflectionClass):Bool;
+	private static function isValidClass(clazz: ReflectionClass): Bool;
 
 	/**
 	 * @phpstan-param \ReflectionClass<Event> $class
 	 *
 	 * @phpstan-return \ReflectionClass<Event>|null
 	 */
-	private static function resolveNearestHandleableParent(clazz:ReflectionClass):Null<ReflectionClass>;
+	private static function resolveNearestHandleableParent(clazz: ReflectionClass): Null<ReflectionClass>;
 
 	/**
 	 * Returns the HandlerList for listeners that explicitly handle this event.
@@ -31,7 +32,7 @@ extern class HandlerListManager {
 	 * @throws ReflectionException
 	 * @throws InvalidArgumentException
 	 */
-	public function getListFor(event:String):HandlerList;
+	public function getListFor(event: String): HandlerList;
 
-	public function getAll():Array<HandlerList>;
+	public function getAll(): Array<HandlerList>;
 }

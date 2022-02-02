@@ -8,13 +8,13 @@ import php.TypedArray;
 import haxe.ds.Option;
 
 class CustomForm extends BaseForm {
-	private var elements:TypedArray<String, CustomFormElement>;
 
-	private var onSubmit:(Player, CustomFormResponse) -> Void;
-	private var onClose:Null<(Player) -> Void>;
+	private var elements: TypedArray<String, CustomFormElement>;
 
-	public function new(title:String, elements:Array<CustomFormElement>, onSubmit:(Player, CustomFormResponse) -> Void,
-			onClose:Null<(Player) -> Void> = null) {
+	private var onSubmit: (Player, CustomFormResponse) -> Void;
+	private var onClose: Null<(Player) -> Void>;
+
+	public function new(title: String, elements: Array<CustomFormElement>, onSubmit: (Player, CustomFormResponse) -> Void, onClose: Null<(Player) -> Void> = null) {
 		super(title);
 		this.elements = new TypedArray();
 		this.onSubmit = onSubmit;
@@ -28,23 +28,23 @@ class CustomForm extends BaseForm {
 		}
 	}
 
-	public function getElement(name:String):Option<CustomFormElement> {
+	public function getElement(name: String): Option<CustomFormElement> {
 		return Transform.nullableToOption(this.elements.get(name));
 	}
 
-	public function handleResponse(player:Player, data:Null<Any>) {
+	public function handleResponse(player: Player, data: Null<Any>) {
 		if (data == null) {
 			if (this.onClose != null) {
 				this.onClose(player);
 			}
 		} else if (Std.isOfType(data, TypedArray)) {
-			var data:Array<Any> = data;
+			var data: Array<Any> = data;
 			if (this.elements.length != data.length) {
 				throw new FormValidationException("Response data is invalid");
 			}
 
 			var index = 0;
-			var values:TypedArray<String, Any> = new TypedArray();
+			var values: TypedArray<String, Any> = new TypedArray();
 			this.elements.foreachKeyValue((name, element) -> {
 				var value = data[index];
 				try {
@@ -61,11 +61,11 @@ class CustomForm extends BaseForm {
 		}
 	}
 
-	function getType():String {
+	function getType(): String {
 		return "custom_form";
 	}
 
-	function serializeFormData():TypedArray<String, Any> {
+	function serializeFormData(): TypedArray<String, Any> {
 		return ["content" => this.elements,];
 	}
 }

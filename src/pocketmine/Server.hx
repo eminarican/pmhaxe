@@ -1,6 +1,7 @@
 package pocketmine;
 
 import pocketmine.log.AttachableThreadedLogger;
+import pocketmine.plugin.PluginManager;
 import pocketmine.utils.UuidInterface;
 import pocketmine.player.Player;
 import php.TypedArray;
@@ -75,7 +76,8 @@ extern class Server {
 	function getLogger(): AttachableThreadedLogger;
 
 	// function getUpdater(): UpdateChecker;
-	// function getPluginManager(): PluginManager;
+	function getPluginManager(): PluginManager;
+
 	// function getCraftingManager(): CraftingManager;
 	// function getResourcePackManager(): ResourcePackManager;
 	// function getWorldManager(): WorldManager;

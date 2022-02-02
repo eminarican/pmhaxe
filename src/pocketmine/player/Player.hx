@@ -1,6 +1,6 @@
 package pocketmine.player;
 
-import haxe.extern.EitherType;
+import pocketmine.form.Form;
 import haxe.extern.EitherType;
 import pocketmine.math.Vector3;
 import pocketmine.lang.Translatable;
@@ -399,7 +399,7 @@ extern class Player implements IPlayer {
 	 *
 	 * @throws InvalidArgumentException
 	 */
-	//function sendForm(form: Form): Void;
+	function sendForm(form: Form): Void;
 
 	function onFormSubmit(formId: Int, responseData: Any): Bool;
 

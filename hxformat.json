@@ -14,11 +14,16 @@
         },
         "externClassEmptyLines": {
             "beginType": 1
-        },
+        }
     },
     "whitespace": {
         "arrowFunctionsPolicy": "around",
-        "typeHintColonPolicy": "after"
+        "typeHintColonPolicy": "after",
+        "switchPolicy": "around",
+        "ifPolicy": "around",
+        "forPolicy": "around",
+        "whilePolicy": "around",
+        "tryPolicy": "around"
     },
     "wrapping": {
         "maxLineLength": 300

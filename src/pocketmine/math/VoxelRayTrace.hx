@@ -36,5 +36,4 @@ extern final class VoxelRayTrace {
 	 * @return Float Distance along the ray trace that must be travelled to cross a boundary.
 	 */
 	private static function rayTraceDistanceToBoundary(s: Float, ds: Float): Float;
-
 }

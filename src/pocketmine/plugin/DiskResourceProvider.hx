@@ -19,5 +19,4 @@ extern class DiskResourceProvider implements ResourceProvider {
 	 * Returns all the resources packaged with the plugin in the form ["path/in/resources" => SplFileInfo]
 	 */
 	function getResources(): TypedArray<String, SplFileInfo>;
-
 }

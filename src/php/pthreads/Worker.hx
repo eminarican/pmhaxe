@@ -67,5 +67,4 @@ extern class Worker extends Thread {
 	 * @link http://www.php.net/manual/en/worker.unstack.php
 	 */
 	function unstack(): Null<Collectable>;
-
 }

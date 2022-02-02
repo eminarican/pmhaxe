@@ -66,5 +66,4 @@ extern class Thread extends Threaded {
 	 * @link http://www.php.net/manual/en/thread.start.php
 	 */
 	function start(options: Int = 0x111111): Bool;
-
 }

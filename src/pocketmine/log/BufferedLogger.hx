@@ -10,5 +10,4 @@ extern interface BufferedLogger extends Logger {
 	 * This is typically used to log blocks of messages on concurrent loggers.
 	 */
 	public function buffer(buffered: Closure): Void;
-
 }

@@ -32,12 +32,13 @@ class CustomForm extends BaseForm {
         return Transform.nullableToOption(this.elements.get(name));
     }
 
-	public function handleResponse(player: Player, data: Null<Array< Any>>) {
+	public function handleResponse(player: Player, data: Null<Any>) {
         if (data == null) {
             if (this.onClose != null) {
                 this.onClose(player);
             }
-        } else {
+        } else if (Std.isOfType(data, TypedArray)) {
+            var data: Array<Any> = data;
             if (this.elements.length != data.length) {
                 throw new FormValidationException("Response data is invalid");
             }
@@ -55,6 +56,8 @@ class CustomForm extends BaseForm {
             });
 
             this.onSubmit(player, new CustomFormResponse(values));
+        } else {
+            throw new FormValidationException("Expected array or null");
         }
     }
 

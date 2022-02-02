@@ -1,6 +1,5 @@
 package pocketmine.form;
 
-import pocketmine.player.Player;
 import php.TypedArray;
 
 abstract class BaseForm implements Form {
@@ -10,8 +9,6 @@ abstract class BaseForm implements Form {
     public function new(title: String) {
         this.title = title;
     }
-
-	abstract public function handleResponse(player: Player, data: Null<Array<Any>>): Void;
 
     /**
 	 * Returns the text shown on the form title-bar.

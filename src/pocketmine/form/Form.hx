@@ -14,5 +14,5 @@ extern interface Form extends JsonSerializable<TypedArray<String, Any>> {
 	 *
 	 * @throws FormValidationException if the data could not be processed
 	 */
-	public function handleResponse(player: Player, data: Null<Array<Any>>): Void;
+	public function handleResponse(player: Player, data: Null<Any>): Void;
 }

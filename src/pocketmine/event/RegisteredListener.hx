@@ -5,16 +5,14 @@ import php.Closure;
 
 @:native("pocketmine\\event\\RegisteredListener")
 extern class RegisteredListener {
+	// public function new(handler: Closure, priority: Int, plugin: Plugin, handleCancelled: Bool, timings: TimingsHandler): Void;
+	public function getHandler():Closure;
 
-	//public function new(handler: Closure, priority: Int, plugin: Plugin, handleCancelled: Bool, timings: TimingsHandler): Void;
+	public function getPlugin():Plugin;
 
-	public function getHandler(): Closure;
+	public function getPriority():Int;
 
-	public function getPlugin(): Plugin;
+	public function callEvent(event:Event):Void;
 
-	public function getPriority(): Int;
-
-	public function callEvent(event: Event): Void;
-
-	public function isHandlingCancelled(): Bool;
+	public function isHandlingCancelled():Bool;
 }

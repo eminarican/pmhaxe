@@ -2,8 +2,7 @@ package pocketmine.utils;
 
 @:native("pocketmine\\utils\\Limits")
 extern final class Limits {
-
-    inline static final UINT8_MAX = 0xff;
+	inline static final UINT8_MAX = 0xff;
 	inline static final INT8_MIN = -0x7f - 1;
 	inline static final INT8_MAX = 0x7f;
 
@@ -15,8 +14,8 @@ extern final class Limits {
 	inline static final INT32_MIN = -0x7fffffff - 1;
 	inline static final INT32_MAX = 0x7fffffff;
 
-    // Todo: find out fix
-	//inline static final UINT64_MAX = 0xffffffffffffffff;
+	// Todo: find out fix
+	// inline static final UINT64_MAX = 0xffffffffffffffff;
 	inline static final INT64_MIN = -0x7fffffffffffffff - 1;
-	//inline static final INT64_MAX = 0x7fffffffffffffff;
+	// inline static final INT64_MAX = 0x7fffffffffffffff;
 }

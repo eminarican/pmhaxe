@@ -19,39 +19,38 @@ import php.interfaces.Closure;
  */
 @:native("Worker")
 extern class Worker extends Thread {
-
-    /**
+	/**
 	 * Executes the optional collector on each of the tasks, removing the task if true is returned
 	 */
-    function collect(collectFunc: Closure = null): Int;
+	function collect(collectFunc:Closure = null):Int;
 
-    /**
+	/**
 	 * Executes the collector on the collectable object passed
 	 */
-    function collector(collectable: Collectable): Bool;
+	function collector(collectable:Collectable):Bool;
 
-    /**
+	/**
 	 * Returns the number of threaded tasks waiting to be executed by the referenced Worker
 	 *
 	 * @link http://www.php.net/manual/en/worker.getstacked.php
 	 */
-    function getStacked(): Int;
+	function getStacked():Int;
 
-    /**
+	/**
 	 * Tell if the referenced Worker has been shutdown
 	 *
 	 * @link http://www.php.net/manual/en/worker.isshutdown.php
 	 */
-    function isShutdown(): Bool;
+	function isShutdown():Bool;
 
-    /**
+	/**
 	 * Shuts down the Worker after executing all the threaded tasks previously stacked
 	 *
 	 * @link http://www.php.net/manual/en/worker.shutdown.php
 	 */
-    function shutdown(): Bool;
+	function shutdown():Bool;
 
-    /**
+	/**
 	 * Appends the referenced object to the stack of the referenced Worker
 	 *
 	 * @param Threaded work Threaded object to be executed by the referenced Worker
@@ -59,12 +58,12 @@ extern class Worker extends Thread {
 	 * @link http://www.php.net/manual/en/worker.stack.php
 	 * @return int The new length of the stack
 	 */
-    function stack(work: Threaded): Int;
+	function stack(work:Threaded):Int;
 
-    /**
+	/**
 	 * Removes the first task (the oldest one) in the stack.
 	 *
 	 * @link http://www.php.net/manual/en/worker.unstack.php
 	 */
-    function unstack(): Null<Collectable>;
+	function unstack():Null<Collectable>;
 }

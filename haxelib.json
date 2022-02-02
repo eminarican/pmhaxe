@@ -6,6 +6,11 @@
     "version": "0.0.1",
     "classPath": "src",
     "releasenote": "",
-    "contributors": ["eminarican"],
-    "tags": ["pocketmine", "extern"]
+    "contributors": [
+        "eminarican"
+    ],
+    "tags": [
+        "pocketmine",
+        "extern"
+    ]
 }

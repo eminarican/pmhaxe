@@ -14,49 +14,48 @@ import php.interfaces.Closure;
  */
 @:native("Pool")
 extern class Pool {
-
-    /**
+	/**
 	 * Construct a new Pool of Workers
 	 *
 	 * @link http://www.php.net/manual/en/pool.__construct.php
 	 */
-    function new(size: Int, workerClass: String, ctor: TypedArray<Int, Dynamic>);
+	function new(size:Int, workerClass:String, ctor:TypedArray<Int, Dynamic>);
 
-    /**
+	/**
 	 * Collect references to completed tasks
 	 *
 	 * Allows the Pool to collect references determined to be garbage by the given collector
 	 *
 	 * @link http://www.php.net/manual/en/pool.collect.php
 	 */
-    function collect(collector: Closure = null): Int;
+	function collect(collector:Closure = null):Int;
 
-    /**
+	/**
 	 * Resize the Pool
 	 *
 	 * @link http://www.php.net/manual/en/pool.resize.php
 	 */
-    function resize(size: Int): Int;
+	function resize(size:Int):Int;
 
-    /**
+	/**
 	 * Shutdown all Workers in this Pool
 	 *
 	 * @link http://www.php.net/manual/en/pool.shutdown.php
 	 */
-    function shutdown(): Void;
+	function shutdown():Void;
 
-    /**
+	/**
 	 * Submit the task to the next Worker in the Pool
 	 *
 	 * @param Threaded task The task for execution
 	 */
-    function submit(task: Threaded): Int;
+	function submit(task:Threaded):Int;
 
-    /**
+	/**
 	 * Submit the task to the specific Worker in the Pool
 	 *
 	 * @param Int      worker The worker for execution
 	 * @param Threaded task The task for execution
 	 */
-    function submitTo(worker: Int, task: Threaded): Int;
+	function submitTo(worker:Int, task:Threaded):Int;
 }

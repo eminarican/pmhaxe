@@ -2,10 +2,9 @@ package pocketmine.math;
 
 @:native("pocketmine\\math\\RayTraceResult")
 extern class RayTraceResult {
+	function getBoundingBox():AxisAlignedBB;
 
-    function getBoundingBox(): AxisAlignedBB;
+	function getHitFace():Int;
 
-	function getHitFace(): Int;
-
-	function getHitVector() : Vector3;
+	function getHitVector():Vector3;
 }

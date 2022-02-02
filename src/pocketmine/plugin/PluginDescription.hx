@@ -4,44 +4,40 @@ import php.TypedArray;
 
 @:native("pocketmine\\plugin\\PluginDescription")
 extern class PluginDescription {
-    
-    function getFullName(): String;
+	function getFullName():String;
 
-	function getCompatibleApis(): Array<String>;
+	function getCompatibleApis():Array<String>;
 
-	function getCompatibleMcpeProtocols(): Array<Int>;
+	function getCompatibleMcpeProtocols():Array<Int>;
 
-	function getCompatibleOperatingSystems(): Array<String>;
+	function getCompatibleOperatingSystems():Array<String>;
 
-	function getAuthors(): Array<String>;
+	function getAuthors():Array<String>;
 
-	function getPrefix(): String;
+	function getPrefix():String;
 
-	//function getCommands(): Array<PluginDescriptionCommandEntry>;
+	// function getCommands(): Array<PluginDescriptionCommandEntry>;
+	function getRequiredExtensions():Array<Array<String>>;
 
-	function getRequiredExtensions(): Array<Array<String>>;
+	function getDepend():Array<String>;
 
-	function getDepend(): Array<String>;
+	function getDescription():String;
 
-	function getDescription(): String;
+	function getLoadBefore():Array<String>;
 
-	function getLoadBefore(): Array<String>;
+	function getMain():String;
 
-	function getMain(): String;
+	function getSrcNamespacePrefix():String;
 
-	function getSrcNamespacePrefix(): String;
+	function getName():String;
 
-	function getName(): String;
+	// function getOrder(): PluginEnableOrder;
+	// function getPermissions(): Array<TypedArray<String, Permission>>;
+	function getSoftDepend():Array<String>;
 
-	//function getOrder(): PluginEnableOrder;
+	function getVersion():String;
 
-	//function getPermissions(): Array<TypedArray<String, Permission>>;
+	function getWebsite():String;
 
-	function getSoftDepend(): Array<String>;
-
-	function getVersion(): String;
-
-	function getWebsite(): String;
-
-	function getMap(): TypedArray<String, Any>;
+	function getMap():TypedArray<String, Any>;
 }

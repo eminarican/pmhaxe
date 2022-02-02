@@ -9,12 +9,10 @@ package php.pthreads;
  */
 @:native("Collectable")
 extern interface Collectable {
-
-    /**
+	/**
 	 * Determine whether an object is ready to be destroyed
 	 *
 	 * @return bool Whether the referenced object can be destroyed
 	 */
-    function isGarbage(): Bool;
-
+	function isGarbage():Bool;
 }

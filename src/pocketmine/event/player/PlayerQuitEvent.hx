@@ -9,12 +9,11 @@ import haxe.extern.EitherType;
  */
 @:native("pocketmine\\event\\player\\PlayerQuitEvent")
 extern class PlayerQuitEvent extends PlayerEvent {
+	public function new(player:Player, quitMessage:EitherType<Translatable, String>, quitReason:String):Void;
 
-	public function new(player: Player, quitMessage: EitherType<Translatable, String>, quitReason: String): Void;
+	public function setQuitMessage(quitMessage:EitherType<Translatable, String>):Void;
 
-	public function setQuitMessage(quitMessage: EitherType<Translatable, String>): Void;
+	public function getQuitMessage():EitherType<Translatable, String>;
 
-	public function getQuitMessage(): EitherType<Translatable, String>;
-
-	public function getQuitReason(): String;
+	public function getQuitReason():String;
 }

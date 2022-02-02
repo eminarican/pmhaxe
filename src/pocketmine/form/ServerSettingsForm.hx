@@ -11,27 +11,27 @@ import php.TypedArray;
  * Passing this form to {@link Player::sendForm()} will not show a form with an icon nor set this form as the server
  * settings.
  */
- class ServerSettingsForm extends CustomForm {
+class ServerSettingsForm extends CustomForm {
+	private final icon:Null<FormIcon>;
 
-	private final icon: Null<FormIcon>;
-
-	public function new(title: String, elements: Array<CustomFormElement>, icon: Null<FormIcon>, onSubmit: (Player, CustomFormResponse) -> Void, onClose: Null<(Player) -> Void> = null){
+	public function new(title:String, elements:Array<CustomFormElement>, icon:Null<FormIcon>, onSubmit:(Player, CustomFormResponse) -> Void,
+			onClose:Null<(Player) -> Void> = null) {
 		super(title, elements, onSubmit, onClose);
 		this.icon = icon;
 	}
 
-	public function hasIcon(): Bool {
+	public function hasIcon():Bool {
 		return this.icon != null;
 	}
 
-	public function getIcon(): Null<FormIcon> {
+	public function getIcon():Null<FormIcon> {
 		return this.icon;
 	}
 
-    override function serializeFormData(): TypedArray<String, Any> {
+	override function serializeFormData():TypedArray<String, Any> {
 		var data = super.serializeFormData();
 
-		if(this.hasIcon()){
+		if (this.hasIcon()) {
 			data.set("icon", this.icon);
 		}
 

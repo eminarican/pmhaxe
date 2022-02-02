@@ -3,17 +3,16 @@ package pocketmine.form.element;
 import php.exceptions.InvalidArgumentException;
 import php.TypedArray;
 
-class Slider extends CustomFormElement{
+class Slider extends CustomFormElement {
+	private var def:Float;
+	private var min:Float;
+	private var max:Float;
+	private var step:Float;
 
-	private var def: Float;
-	private var min: Float;
-	private var max: Float;
-	private var step: Float;
-
-	public function new(name: String, text: String, min: Float, max: Float, step: Float = 1.0, def: Null<Float> = null){
+	public function new(name:String, text:String, min:Float, max:Float, step:Float = 1.0, def:Null<Float> = null) {
 		super(name, text);
 
-		if(this.min > this.max){
+		if (this.min > this.max) {
 			throw new InvalidArgumentException("Slider min value should be less than max value");
 		}
 		this.min = min;
@@ -34,42 +33,37 @@ class Slider extends CustomFormElement{
 		this.step = step;
 	}
 
-	public function getType(): String{
+	public function getType():String {
 		return "slider";
 	}
 
-	public function validateValue(value: Any): Void {
+	public function validateValue(value:Any):Void {
 		if (!Std.isOfType(value, Float)) {
 			throw new FormValidationException("Expected Float");
 		}
-        var value: Float = value;
+		var value:Float = value;
 		if (value < this.min || value > this.max) {
 			throw new FormValidationException("Value value is out of bounds (min this.min, max this.max)");
 		}
 	}
 
-	public function getMin(): Float {
+	public function getMin():Float {
 		return this.min;
 	}
 
-	public function getMax(): Float {
+	public function getMax():Float {
 		return this.max;
 	}
 
-	public function getStep(): Float {
+	public function getStep():Float {
 		return this.step;
 	}
 
-	public function getDefault(): Float {
+	public function getDefault():Float {
 		return this.def;
 	}
 
-	function serializeElementData(): TypedArray<String, Any>{
-		return [
-			"min" => this.min,
-			"max" => this.max,
-			"default" => this.def,
-			"step" => this.step
-		];
+	function serializeElementData():TypedArray<String, Any> {
+		return ["min" => this.min, "max" => this.max, "default" => this.def, "step" => this.step];
 	}
 }
